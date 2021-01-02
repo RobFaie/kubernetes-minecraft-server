@@ -22,7 +22,7 @@ spec:
           claimName: minecraft-data-pvc
       containers:
       - name: minecraft-server
-        image: itzg/minecraft-server:latest
+        image: itzg/minecraft-server:multiarch-latest
         resources:
           limits:
             memory: 2Gi
@@ -32,11 +32,11 @@ spec:
           - name:  EULA
             value: 'TRUE'
           - name: MODE
-            value: creative
+            value: survival
           - name: MOTD
             value: Your super-cool minecraft server
           - name: ALLOW_FLIGHT
-            value: 'TRUE'
+            value: 'FALSE'
         ports:
         - containerPort: 25565
           name: minecraft
